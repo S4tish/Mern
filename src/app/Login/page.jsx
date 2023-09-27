@@ -6,7 +6,6 @@ import { Facebook, Google, WhatsApp } from "@mui/icons-material";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-
 import Script from "next/script";
 
 const page = () => {
@@ -14,7 +13,7 @@ const page = () => {
   const [pin, setPin] = useState("");
   const [mobileNumberError, setMobileNumberError] = useState("");
   const [pinError, setPinError] = useState("");
-  const [loginError, setLoginError] = useState('');
+  const [loginError, setLoginError] = useState("");
 
   const handleMobileNumberChange = (event) => {
     const newValue = event.target.value.slice(0, 10);
@@ -45,17 +44,16 @@ const page = () => {
       });
 
       if (response.data.success) {
-        toast.success('Login successful!', {
+        toast.success("Login successful!", {
           autoClose: 5000,
         });
       } else {
-        toast.error('Invalid credentials');
+        toast.error("Invalid credentials");
       }
     } catch (error) {
-      console.error('Login error:', error);
-      toast.error('Login failed. Please try again.');
+      console.error("Login error:", error);
+      toast.error("Login failed. Please try again.");
     }
-  
   };
   useEffect(() => {
     window.otpless = (otplessUser) => {

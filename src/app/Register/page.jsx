@@ -51,8 +51,8 @@ const page = () => {
         });
         // alert("Registration successful!");
         toast.success("Registration successful! You can now log in.", {
-            autoClose: 8000 // Set auto-close duration to 8 seconds
-          });
+          autoClose: 8000, // Set auto-close duration to 8 seconds
+        });
         router.push("/Login");
       } catch (error) {
         console.error("Registration error:", error);
